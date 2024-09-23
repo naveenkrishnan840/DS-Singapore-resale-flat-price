@@ -1,0 +1,22 @@
+
+[tool.poetry]
+name = "Singapore Resale Flat Price"
+version = "0.1.0"
+description = "To describe Singapore Resale Flat Price insights for Maching Learning Task"
+license = "MIT"
+authors = ["Navaneethan <naveenkrishnan840@gmail.com>"]
+maintainers = ["Navaneethan naveenkrishnan840@gmail.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scikit-learn = "1.5.1"
+xgboost = "2.1.1"
+pandas = "2.2.2"
+matplotlib = "3.9.2"
+seaborn = "0.13.2"
+plotly = "5.24.0"
+streamlit = "1.38.0"
+openpyxl = "3.1.5"
+mlflow = "2.16.0"
+dagshub = "0.3.35"
