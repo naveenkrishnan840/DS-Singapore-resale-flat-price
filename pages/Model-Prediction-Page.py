@@ -47,7 +47,7 @@ if task != "Select":
                 with st.expander('Month'):
                     this_year = datetime.date.today().year
                     this_month = datetime.date.today().month
-                    flat_year = st.selectbox('', range(this_year, this_year - 8, -1), label_visibility=False)
+                    flat_year = st.selectbox('', range(this_year, this_year - 8, -1), label_visibility="hidden")
                     month_abbr = calendar.month_abbr[1:]
                     flat_month_str = st.radio('', month_abbr, index=this_month - 1, horizontal=True)
                     flat_month = month_abbr.index(flat_month_str) + 1
