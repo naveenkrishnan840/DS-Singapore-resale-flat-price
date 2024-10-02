@@ -281,8 +281,8 @@ if task != "Select":
             X_test.reset_index(drop=True, inplace=True)
             st.markdown("<h5> Scaling Data </h5>", unsafe_allow_html=True)
             st.dataframe(pd.concat([X, y], axis=1).head(10), use_container_width=True)
-            X_train["selling_price"] = y_train
-            X_test["selling_price"] = y_test
+            X_train["resale_price"] = y_train
+            X_test["resale_price"] = y_test
             if not os.path.exists("./regression"):
                 os.makedirs("regression", exist_ok=True)
             if os.path.exists("./regression/training_data.csv"):
