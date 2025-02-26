@@ -3,7 +3,12 @@
 <div align="center">
   <!-- Backend -->
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/XGBoost-3C8D4F?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/"/>
+  <img src="https://img.shields.io/badge/XGBoost-3C8D4F?style=for-the-badge&logo=xgboost&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MLflow-5C6B8C?style=for-the-badge&logo=mlflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/DagsHub-00A9A6?style=for-the-badge&logo=dagshub&logoColor=white"/>
+	
   <h3>Your Singapore Flat Resale price 🚀</h3>
 
   <p align="center">
