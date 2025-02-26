@@ -23,26 +23,6 @@ The DS-Singapore-Flat-Resale-Price project is designed to predict the resale pri
 The DS-Singapore-Flat-Resale-Price project is motivated by the growing need to predict property prices accurately in a dynamic real estate market, specifically the resale market of public flats in Singapore. several key motivations behind the project like Real Estate Market Uncertainty, Demand for Data-Driven Insights in Real Estate, 
 Singapore's Unique Housing Market.
 
-## key Features & Explanation
-  1. Regression Model (XGBoost):
-       - The core of the project is based on XGBoost, a powerful and widely used machine learning algorithm. XGBoost is a type of gradient boosting method that works well for regression tasks, especially when dealing with complex and large datasets.
-       - The model will be trained using various features like:
-          - flat_type
-          - block
-          - storey_range
-          - floor_area_sqm
-          - flat_model
-          - flat_year
-          - flat_month
-          - remaining_lease
-          - lease_commence_date
-       - The model will predict the resale price of the flat based on these inputs.
-   2. Data Exploration & Visualization:
-      	- Plotly and Seaborn will be used to create rich data visualizations that help understand relationships between features and the target variable (resale price).
-### **Project Overview: DS-Singapore-Flat-Resale-Price**
-
-The **DS-Singapore-Flat-Resale-Price** project aims to build a **regression model** that predicts the **resale price of flats** in **Singapore** based on a set of key input features. The goal is to leverage **machine learning** techniques to provide accurate price predictions for flats in Singapore’s **HDB resale market**. The project uses a variety of tools and frameworks, including **XGBoost**, **Plotly**, **Streamlit**, **MLflow**, **DagsHub**, and **Seaborn**.
-
 ### **Key Components of the Project**
 
 1. **Objective**:
@@ -159,39 +139,14 @@ The **output feature** of the model is:
 
 ---
 
-## Project Structure
-```
-Youtube-Video-Summarization/
-├── backend/
-|  ├── src/
-|  |   ├── audio_path/
-|  │   ├── documents/                           
-|  │   │   ├── image.png                     
-|  │   │   ├── audio_text.txt             
-|  |   |── lancedb/
-|  │   │   ├── image_collections.lance/
-|  │   │   ├── text_collections.lance/
-|  |   |── tokenizer_path/         
-|  |   ├── video_path/
-|  |   |── whisper_model_path/
-|  │   ├── request_validate.py          
-|  |   ├── video_extract.py
-|  │────── .env # If you want
-|  │────── pyproject.toml # create virtual env using poetry
-|  │────── main.py # Main entry point
-|  ├── pyproject.toml
-|  ├── ...
-```
-
 ## Setup Instructions
 
 ### Backend Setup
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/naveenkrishnan840/Youtube-Video-Summarization.git
-   cd Youtube-Video-Summarization
-   cd backend
+   git clone https://github.com/naveenkrishnan840/DS-Singapore-resale-flat-price.git
+   cd DS-Singapore-resale-flat-price
    ```
 
 2. Install Poetry (if not already installed)
@@ -229,58 +184,20 @@ Youtube-Video-Summarization/
    poetry install
    ```
 
-6. Set up environment variables in `.env`:
-   ```bash
-    DOCUMENTS_PATH="your docs path"
-    AUDIO_PATH="your audio path"
-    IMAGE_FORMAT=frame%04d.png
-    AUDIO_FORMAT=output_audio.mp3
-    VIDEO_PATH="your video path"
-    AUDIO_TEXT_FORMAT=audio_text.txt
-    OUTPUT_AUDIO_PATH=output_text.txt
-    GOOGLE_API_KEY="you api here"
-    LANCEDB_PATH="your DB path"
-   ```
 
 7. Run the backend:
 
    Make sure you are in the backend folder
 
     ```bash
-    uvicorn app.main:app --reload --port 8000 
+    streamlit run
     ```
 
    For Windows User:
 
     ```bash
-    uvicorn app.main:app --port 8000
+    streamlit run Model-Training-Page.py
     ```
-
-8. Access the API at `http://localhost:8000`
-
-### Frontend Setup
-
-1. Open a new terminal and make sure you are in the WebRover folder:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the frontend:
-   ```bash
-   npm run dev
-   ```
-
-4. Access the frontend at `http://localhost:3000`
-
-For mac users: 
-
-Try running http://localhost:3000 on Safari browser. 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
