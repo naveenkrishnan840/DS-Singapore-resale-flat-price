@@ -141,10 +141,10 @@ if task != "Select":
 
         with st.container():
             st.markdown("<p style='border: 1px solid red; height: 40px; border-radius:10px; "
-                        "text-align:center; cursor:pointer; line-height: 3rem; ' > Identify Skewness </p>",
+                        "text-align:center; cursor:pointer; line-height: 3rem; ' > Identify skewness </p>",
                         unsafe_allow_html=True)
-
-            st.markdown("<h5 style='color: red;'> Floor Area Sqm </h5>", unsafe_allow_html=True)
+            # Floor Area Sqm
+            st.markdown("<h3 style='color: red;'> Floor Area Sqm </h3>", unsafe_allow_html=True)
             CLT_floor_area_sqm_data = pd.Series([regression_data.loc[:, "floor_area_sqm"].sample(n=100,
                                                                                                  replace=True).mean()
                                         for i in range(0, 1000)])
@@ -153,15 +153,18 @@ if task != "Select":
             display_plot(CLT_floor_area_sqm_data, ["Floor Area Sqm"])
             # st.plotly_chart(ff.create_distplot([regression_data['floor_area_sqm']],
             #                                    group_labels=["Floor Area Sqm"]), theme=None)
-            st.markdown("<h5 style='color: red;'> Positive Skewness is asymmetrical distribution "
-                        "(mean > median > mode)</h5>", unsafe_allow_html=True)
-            st.text(f"check the condition for positive or right skewness (mean > median > mode) is "
-                    f"{CLT_floor_area_sqm_data.mean()} > {CLT_floor_area_sqm_data.median()} > "
-                    f"{stat.mode(CLT_floor_area_sqm_data).mode}")
-            st.markdown("<h5 style='color: red;'>Lease Commence Date</h5>", unsafe_allow_html=True)
-            CLT_lease_commence_date_data = pd.Series([regression_data.loc[:, "lease_commence_date"].sample(n=100,
-                                                                                                 replace=True).mean()
-                                                 for i in range(0, 1000)])
+            st.markdown("<h5 style='color: red;'> Negative/Left Skewness is asymmetrical distribution "
+                        "(median > mean > mode)</h5>", unsafe_allow_html=True)
+            st.markdown(f"<h5 style='color: red;'>check the condition for negative/left skewness "
+                        f"(median > mean > mode) is {CLT_floor_area_sqm_data.median()} > "
+                        f"{CLT_floor_area_sqm_data.mean()} > {stat.mode(CLT_floor_area_sqm_data).mode}</h5>",
+                        unsafe_allow_html=True)
+            st.divider()
+
+            # Lease Commence Date
+            st.markdown("<h3 style='color: red;'>Lease Commence Date</h3>", unsafe_allow_html=True)
+            CLT_lease_commence_date_data = pd.Series([regression_data.loc[:, "lease_commence_date"].
+                                                     sample(n=100, replace=True).mean() for i in range(0, 1000)])
             st.markdown(f"<h5 style='color: red;'>skewness Of Lease Commence Date is "
                         f"{str(CLT_lease_commence_date_data.skew())}</h5>", unsafe_allow_html=True)
             display_plot(CLT_lease_commence_date_data, ["Lease Commence Date"])
@@ -173,38 +176,51 @@ if task != "Select":
                         f"(mean > median > mode) is "
                         f"{CLT_lease_commence_date_data.mean()} > {CLT_lease_commence_date_data.median()} > "
                         f"{stat.mode(CLT_lease_commence_date_data).mode}</h5", unsafe_allow_html=True)
+            st.divider()
 
-            st.markdown("<h5 style='color: red;'> Remaining Lease </h5>", unsafe_allow_html=True)
+            # Remaining Lease
+            st.markdown("<h3 style='color: red;'> Remaining Lease </h3>", unsafe_allow_html=True)
             CLT_remaining_lease_data = pd.Series([regression_data.loc[:, "remaining_lease"].sample(n=100,
-                                                                                                           replace=True).mean()
-                                                      for i in range(0, 1000)])
+                                                                                                   replace=True).mean()
+                                                  for i in range(0, 1000)])
             st.markdown(f"<h5 style='color: red;' >skewness Of Remaining Lease is "
                         f"{str(CLT_remaining_lease_data.skew())} </h5>", unsafe_allow_html=True)
             display_plot(CLT_remaining_lease_data, ["Remaining Lease"])
             # st.plotly_chart(ff.create_distplot([regression_data['remaining_lease']],
             #                                    group_labels=["Remaining Lease"]), theme=None)
-            st.markdown("Positive Skewness is asymmetrical distribution (mean > median > mode)")
-            st.markdown(f"<h5 style='color: red;'>check the condition for positive or right skewness "
-                        f"(mean > median > mode) is "
-                        f"{CLT_remaining_lease_data.mean()} > "
+            st.markdown("<h5 style='color: red;'> Negative Skewness or Left Skewness is a asymmetrical distribution "
+                        "(median > mean > mode) </h5>",unsafe_allow_html=True)
+            st.markdown(f"<h5 style='color: red;'>check the condition for negative/left skewness "
+                        f"(median   > mean > mode) is "
                         f"{CLT_remaining_lease_data.median()} > "
+                        f"{CLT_remaining_lease_data.mean()} > "
                         f"{stat.mode(CLT_remaining_lease_data).mode}</h5", unsafe_allow_html=True)
         with st.container():
             st.markdown("<p style='border: 1px solid red; height: 40px; border-radius:10px; "
                         "text-align:center; cursor:pointer; line-height: 3rem;' > "
-                        "showing outlier & handling outlier </p>", unsafe_allow_html=True)
-            st.markdown("<h4> Before Handling Outlier </h4>", unsafe_allow_html=True)
-            st.markdown("<h5> Box Plot </h5>", unsafe_allow_html=True)
+                        "Showing outlier & Handling outlier </p>", unsafe_allow_html=True)
+            st.markdown("<h3 style='color: red;'> Before Handling Outlier </h3>", unsafe_allow_html=True)
+            st.markdown("<h5 style='color: red;'> Box Plot </h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='color: red;'> Flat Year </h5>", unsafe_allow_html=True)
             render_box_chart(regression_data, "flat_year")
+            st.divider()
             # st.plotly_chart(px.box(regression_data, x="flat_year"), theme=None)
             # st.plotly_chart(px.box(regression_data, x="flat_month"), theme=None)
+            st.markdown("<h5 style='color: red;'> Flat Month </h5>", unsafe_allow_html=True)
             render_box_chart(regression_data, "flat_month")
+            st.divider()
             # st.plotly_chart(px.box(regression_data, x="floor_area_sqm"), theme=None)
+            st.markdown("<h5 style='color: red;'> floor Area Sqm </h5>", unsafe_allow_html=True)
             render_box_chart(regression_data, "floor_area_sqm")
+            st.divider()
             # st.plotly_chart(px.box(regression_data, x="lease_commence_date"), theme=None)
+            st.markdown("<h5 style='color: red;'> Lease Commence Date </h5>", unsafe_allow_html=True)
             render_box_chart(regression_data, "lease_commence_date")
+            st.divider()
             # st.plotly_chart(px.box(regression_data, x="remaining_lease"), theme=None)
+            st.markdown("<h5 style='color: red;'> Remaining Lease </h5>", unsafe_allow_html=True)
             render_box_chart(regression_data, "remaining_lease")
+            st.divider()
             lower_floor_area_sqm_limit = regression_data["floor_area_sqm"].mean() - 3 * (
                 regression_data["floor_area_sqm"].std())
             upper_floor_area_sqm_limit = regression_data["floor_area_sqm"].mean() + 3 * (
@@ -214,7 +230,8 @@ if task != "Select":
             count_of_outlier = regression_data[
                 (regression_data["floor_area_sqm"] < lower_floor_area_sqm_limit) |
                 (regression_data["floor_area_sqm"] > upper_floor_area_sqm_limit)].shape[0]
-            st.text(f"Count Of Floor Area Sqm Outlier is {str(count_of_outlier)}")
+            st.markdown(f"<h5 style='color:red';>Count Of Floor Area Sqm Outlier is {str(count_of_outlier)} </h5>",
+                        unsafe_allow_html=True)
             # Handling Width Outlier
             regression_data["floor_area_sqm"] = np.where(regression_data["floor_area_sqm"] <
                                                          lower_floor_area_sqm_limit,
@@ -278,7 +295,9 @@ if task != "Select":
             X_train[X_train.columns] = scaler.transform(X_train)
             X_test[X_test.columns] = scaler.transform(X_test)
             X_train.reset_index(drop=True, inplace=True)
+            y_train.reset_index(drop=True, inplace=True)
             X_test.reset_index(drop=True, inplace=True)
+            y_test.reset_index(drop=True, inplace=True)
             st.markdown("<h5> Scaling Data </h5>", unsafe_allow_html=True)
             st.dataframe(pd.concat([X, y], axis=1).head(10), use_container_width=True)
             X_train["resale_price"] = y_train
