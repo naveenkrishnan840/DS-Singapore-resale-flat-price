@@ -3,10 +3,8 @@
 <div align="center">
   <!-- Backend -->
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-
-
-[![XGBoost](https://img.shields.io/badge/XGBoost-3C8D4F?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/) 
-  <h3>Your AI Co-pilot for Youtube Video Summarization 🚀</h3>
+  <img src="https://img.shields.io/badge/XGBoost-3C8D4F?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/"/>
+  <h3>Your Singapore Flat Resale price 🚀</h3>
 
   <p align="center">
     <b> LanceDB Retriever | OpenAI-Whisper | Clip | Gemini MultiModal  </b>
