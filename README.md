@@ -3,21 +3,9 @@
 <div align="center">
   <!-- Backend -->
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/yt--dlp-FF4F00?style=for-the-badge&logo=yt-dlp&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/Google_Multimodal-4285F4?style=for-the-badge&logo=google&logoColor=white" />
-  <img src="https://img.shields.io/badge/LlamaIndex-4F5B93?style=for-the-badge&logo=llamaindex&logoColor=white" />
-  <img src="https://img.shields.io/badge/LanceDB-4F5B93?style=for-the-badge&logo=lancedb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Transformers-2D2D2D?style=for-the-badge&logo=transformers&logoColor=white" />
-  <img src="https://img.shields.io/badge/Torch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/TorchVision-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/MoviePy-FF4F00?style=for-the-badge&logo=moviepy&logoColor=white" />
-  
-  <!-- Frontend -->
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
 
+
+[![XGBoost](https://img.shields.io/badge/XGBoost-3C8D4F?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/) 
   <h3>Your AI Co-pilot for Youtube Video Summarization 🚀</h3>
 
   <p align="center">
