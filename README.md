@@ -12,7 +12,7 @@
   <h3>Your Singapore Flat Resale price 🚀</h3>
 
   <p align="center">
-    <b> LanceDB Retriever | OpenAI-Whisper | Clip | Gemini MultiModal  </b>
+    <b> XgBoost | Streamlit | Mlflow | Dagshub  </b>
   </p>
 </div>
 
@@ -37,24 +37,127 @@ Singapore's Unique Housing Market.
           - remaining_lease
           - lease_commence_date
        - The model will predict the resale price of the flat based on these inputs.
-## Architecture
+   2. Data Exploration & Visualization:
+      	- Plotly and Seaborn will be used to create rich data visualizations that help understand relationships between features and the target variable (resale price).
+### **Project Overview: DS-Singapore-Flat-Resale-Price**
 
-```mermaid
-graph TD
-    %% Graph structure
-	A["YouTube Video (Input)"] --> B["yt-dlp (Video/Audio Extraction)"];
-    	B --> C["Audio (MP3)"];
-    	B --> D["Video (MP4)"];
-    	C --> E["OpenAI Whisper (Speech-to-Text)"];
-    	D --> F["CLIP (Image Analysis)"];
-    	E --> G["Text Data (Transcription)"];
-    	F --> H["Key Frames (Images)"];
-    	H --> J["LanceDB (Image Vector + Text Vector)"];
-	G --> J;
-    	J --> K["Multimodal Model (Text + Images)"];
-    	K --> L["Summarized Text & Images"];
-```
+The **DS-Singapore-Flat-Resale-Price** project aims to build a **regression model** that predicts the **resale price of flats** in **Singapore** based on a set of key input features. The goal is to leverage **machine learning** techniques to provide accurate price predictions for flats in Singapore’s **HDB resale market**. The project uses a variety of tools and frameworks, including **XGBoost**, **Plotly**, **Streamlit**, **MLflow**, **DagsHub**, and **Seaborn**.
 
+### **Key Components of the Project**
+
+1. **Objective**:
+   The project aims to create a regression model that predicts the **resale price** of flats based on various features like flat type, location, size, age, and more. The final goal is to provide a data-driven, predictive tool that can assist potential buyers, sellers, and investors in the Singapore flat resale market.
+
+---
+
+### **Input Features**:
+The model takes the following **input features** to predict the resale price:
+
+1. **flat_type**: 
+   - The type of flat, such as **1-room**, **2-room**, **3-room**, **4-room**, **5-room**, etc. This feature helps in identifying the size and configuration of the flat.
+
+2. **block**: 
+   - The **block number** or identifier where the flat is located. This can provide information on the building's location within a neighborhood.
+
+3. **storey_range**:
+   - The **floor range** of the flat, such as **high floor** or **low floor**. This is crucial as higher floor flats tend to have a different market value compared to lower floor flats.
+
+4. **floor_area_sqm**:
+   - The **floor area** of the flat in **square meters**. A key determinant of the flat’s price, as larger flats generally cost more.
+
+5. **flat_model**: 
+   - The **design/model** of the flat, which could indicate the age or specific layout of the flat (e.g., **standard**, **improved**, **premium**). Different flat models might have different price ranges.
+
+6. **resale_price**:
+   - The **target variable** for this regression task. It represents the price at which the flat was sold in the resale market.
+
+7. **flat_year**:
+   - The **year of construction** of the flat. Older flats may have a different value compared to newly built flats due to depreciation, maintenance, and other factors.
+
+8. **flat_month**:
+   - The **month** in which the flat was sold. This can help identify trends or seasonality in the resale market.
+
+9. **remaining_lease**:
+   - The **remaining lease** on the flat. Flats with longer remaining leases typically have higher resale prices as they provide more years of ownership.
+
+10. **lease_commence_date**:
+    - The date when the **lease started**, which helps calculate the **remaining lease** and also informs buyers and investors about the flat's long-term value.
+
+---
+
+### **Output Feature**:
+The **output feature** of the model is:
+
+- **Resale Price**:
+  - The predicted **resale price** of the flat. This is the target variable the model is trying to predict, given the input features.
+
+---
+
+### **Key Technologies and Tools Used**:
+
+1. **XGBoost**:
+   - **XGBoost** is a powerful gradient boosting algorithm used for **regression** tasks. It is the core of the model and will be used to train the predictive model that estimates the resale price based on the input features.
+   - The benefits of **XGBoost** include:
+     - Ability to handle **large datasets** efficiently.
+     - Robust against **overfitting**.
+     - Works well with **both categorical and numerical** data, making it ideal for this project.
+     - Hyperparameter tuning to improve model performance and accuracy.
+
+2. **Plotly**:
+   - **Plotly** is a visualization tool that helps to create **interactive visualizations**. It will be used to create plots that show the relationships between the different features and the resale price, including:
+     - Scatter plots to visualize the impact of features like **floor area** or **storey range** on **resale price**.
+     - Heatmaps to visualize the correlations between features.
+     - Interactive plots where users can explore the dataset and predictions.
+
+3. **Streamlit**:
+   - **Streamlit** will be used to build an **interactive web application** for real-time prediction. Users will be able to input various parameters such as **flat type**, **floor area**, and **remaining lease**, and the model will provide an estimated resale price.
+   - The **Streamlit app** will display:
+     - Real-time predictions of resale prices.
+     - Visualizations and graphs for better understanding of the model.
+     - Performance metrics to show how accurate the model is (e.g., RMSE, R²).
+
+4. **MLflow**:
+   - **MLflow** will be used for **model tracking** and **experiment management**. It will help to:
+     - Track the performance of different models and hyperparameters.
+     - Store and version models, allowing easy rollback or future improvements.
+     - Record metrics like **RMSE**, **R²**, and other evaluation measures during model training.
+
+5. **DagsHub**:
+   - **DagsHub** is a platform for versioning and managing machine learning projects. It will be used to:
+     - Store the dataset.
+     - Version control the data and code.
+     - Collaborate with other team members, allowing for easier sharing and collaboration.
+
+6. **Seaborn**:
+   - **Seaborn** is a statistical data visualization library that will be used for:
+     - Creating **distribution plots** and **histograms** to understand the spread of the resale prices.
+     - Plotting **correlation heatmaps** to identify key relationships between features and resale prices.
+     - Generating **pair plots** to visualize multiple variables at once.
+
+---
+
+### **Project Workflow**:
+
+1. **Data Preprocessing**:
+   - Clean and preprocess the data, including handling **missing values**, encoding **categorical variables** (e.g., flat type, flat model), and scaling the **numerical features** like floor area and remaining lease.
+   
+2. **Exploratory Data Analysis (EDA)**:
+   - Use **Seaborn** and **Plotly** to explore the relationships between features and resale prices.
+   - Identify important correlations and trends, such as whether **floor area** or **flat type** is most strongly correlated with price.
+   
+3. **Model Development**:
+   - Train an **XGBoost regression model** using the input features to predict the **resale price**.
+   - Tune hyperparameters to optimize model performance.
+
+4. **Model Evaluation**:
+   - Evaluate the model using performance metrics such as **RMSE** (Root Mean Squared Error) and **R²** (coefficient of determination).
+   - Use **MLflow** to track different experiment versions and monitor model performance.
+
+5. **Deployment**:
+   - Deploy the model as an interactive web app using **Streamlit**, where users can input features and get real-time predictions.
+   - Visualize key insights and predictions through **interactive charts**.
+
+---
 
 ## Project Structure
 ```
